@@ -49,7 +49,7 @@ const Calculator = () => {
       <Box m={5} />
       <Container maxWidth="xs">
         <div className="container">
-          <Box m={10} />
+          <Box m={12} />
           <p className="display">{value}</p>
           <button className="function" onClick={clear}>
             AC
