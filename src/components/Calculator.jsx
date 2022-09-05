@@ -12,6 +12,10 @@ const Calculator = () => {
         value === 0 ? setValue(input) : setValue(value + input)
     }
 
+    const clear = () => {
+        setValue(0);
+    }
+
   return (
     <>
         <Box m={5} />
@@ -19,7 +23,7 @@ const Calculator = () => {
             <div className="container">
                 <Box m={10}/>
                 <p className='display'>{value}</p>
-                <button className='function'>AC</button>
+                <button className='function' onClick={clear}>AC</button>
                 <button className='function'>+/-</button>
                 <button className='function'>%</button>
                 <button className='function'>/</button>
