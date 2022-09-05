@@ -29,15 +29,22 @@ const Calculator = () => {
     switch (operator) {
       case "/":
         setValue(parseFloat(prevValue) / parseFloat(value));
+        setOperator();
         break;
       case "X":
         setValue(parseFloat(prevValue) * parseFloat(value));
+        setOperator();
         break;
       case "-":
         setValue(parseFloat(prevValue) - parseFloat(value));
+        setOperator();
         break;
       case "+":
         setValue(parseFloat(prevValue) + parseFloat(value));
+        setOperator();
+        break;
+      case "=":
+        setOperator();
         break;
       default:
         console.log("default");
@@ -56,7 +63,9 @@ const Calculator = () => {
           </button>
           <button className="function">+/-</button>
           <button className="function">%</button>
-          <button className="function" onClick={handleOperator} value={'/'}>/</button>
+          <button className="function" onClick={handleOperator} value={"/"}>
+            /
+          </button>
 
           <button className="number" onClick={typeNumber} value={7}>
             7
@@ -67,7 +76,7 @@ const Calculator = () => {
           <button className="number" onClick={typeNumber} value={9}>
             9
           </button>
-          <button className="operator" onClick={handleOperator} value={'X'}>
+          <button className="operator" onClick={handleOperator} value={"X"}>
             X
           </button>
 
@@ -80,7 +89,7 @@ const Calculator = () => {
           <button className="number" onClick={typeNumber} value={6}>
             6
           </button>
-          <button className="operator" onClick={handleOperator} value={'-'}>
+          <button className="operator" onClick={handleOperator} value={"-"}>
             -
           </button>
 
@@ -93,7 +102,7 @@ const Calculator = () => {
           <button className="number" onClick={typeNumber} value={3}>
             3
           </button>
-          <button className="operator" onClick={handleOperator} value={'+'}>
+          <button className="operator" onClick={handleOperator} value={"+"}>
             +
           </button>
 
